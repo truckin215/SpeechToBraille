@@ -1,12 +1,13 @@
+package speech;
+
 // Make sure to add com.assemblyai:assemblyai-java to your dependencies
 
-package speech;
 import com.assemblyai.api.AssemblyAI;
 import com.assemblyai.api.resources.transcripts.types.*;
 
-public final class Controller {
+public final class TextProcessor {
 
-    public static void main(String... args) throws Exception {
+    public TextProcessor() throws Exception {
         AssemblyAI client = AssemblyAI.builder()
                 .apiKey("4531fb0bfce74443ab637fe7a8e73c28")
                 .build();
@@ -20,7 +21,5 @@ public final class Controller {
         System.out.println("Transcript: " + transcript);
     }
 }
-
-
 
 
