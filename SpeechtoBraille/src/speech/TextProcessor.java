@@ -3,6 +3,7 @@ package speech;
 // Make sure to add com.assemblyai:assemblyai-java to your dependencies
 
 import com.assemblyai.api.AssemblyAI;
+import com.assemblyai.api.resources.transcripts.requests.TranscriptParams;
 import com.assemblyai.api.resources.transcripts.types.*;
 
 public final class TextProcessor {
