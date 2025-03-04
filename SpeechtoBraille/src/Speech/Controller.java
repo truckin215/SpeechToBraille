@@ -7,7 +7,10 @@ import com.assemblyai.api.resources.transcripts.types.*;
 public final class Controller {
 
     public static void main(String... args) throws Exception {
-    	
+    	TextProcessor tp = new TextProcessor();
+    	//starts recorder
+    	tp.record();
+    	System.out.println("program stopped.");
     }
 }
 

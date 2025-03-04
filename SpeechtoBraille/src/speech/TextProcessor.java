@@ -7,7 +7,8 @@ import com.assemblyai.api.resources.transcripts.requests.TranscriptParams;
 import com.assemblyai.api.resources.transcripts.types.*;
 public final class TextProcessor {
 
-    public TextProcessor() throws Exception {
+   // public TextProcessor() throws Exception {
+    	/*
         AssemblyAI client = AssemblyAI.builder()
                 .apiKey("4531fb0bfce74443ab637fe7a8e73c28")
                 .build();
@@ -20,10 +21,11 @@ public final class TextProcessor {
 
         System.out.println("Transcript: " + transcript);
     }
+    */
     
     public boolean record() {
     	SpeechListner recorder = new SpeechListner();
-    	
+    	recorder.rawData();
     	return false;
     }
 }
