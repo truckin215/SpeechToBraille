@@ -10,6 +10,9 @@ public final class Controller {
     	TextProcessor tp = new TextProcessor();
     	//starts recorder
     	tp.record();
+    	//running trancriber
+    	System.out.println("running transcriber.");
+    	tp.transcribe();
     	System.out.println("program stopped.");
     }
 }

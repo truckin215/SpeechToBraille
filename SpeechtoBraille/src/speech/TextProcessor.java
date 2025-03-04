@@ -28,6 +28,11 @@ public final class TextProcessor {
     	recorder.rawData();
     	return false;
     }
+
+	public void transcribe() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
 
