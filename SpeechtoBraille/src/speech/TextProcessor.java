@@ -15,8 +15,12 @@ public final class TextProcessor {
     	recorder.rawData();
     	return false;
     }
-
-	public void transcribe() throws Exception {
+    public Transcript transcribe() throws Exception {
+    	File audioFile = new File("output/recorded_audio.wav");
+    	Transcript transcript=transcribe(audioFile);
+    	return(transcript);
+    }
+	public Transcript transcribe(File audioFile) throws Exception {
 		//Initializes AssemblyAi
         AssemblyAI client = AssemblyAI.builder()
                 .apiKey("c790508a0e474bda8ca373af27bae024")
@@ -26,10 +30,9 @@ public final class TextProcessor {
                 .speakerLabels(true)
                 .build();
         //get audio file
-        File audioFile = new File("output/recorded_audio.wav");
         if (!audioFile.exists()) {
             System.err.println("Error: Audio file not found.");
-            return;
+            return null;
         }
         Transcript transcript = client.transcripts().transcribe(audioFile, params);
 
@@ -38,6 +41,7 @@ public final class TextProcessor {
         }
 
         System.out.println("Transcript: " + transcript.getText());
+        return(transcript);
 	}
 }
 
