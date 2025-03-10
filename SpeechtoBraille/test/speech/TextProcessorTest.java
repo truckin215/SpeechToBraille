@@ -6,13 +6,16 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
+import com.assemblyai.api.resources.transcripts.types.Transcript;
+
 class TextProcessorTest {
 
 	@Test
 	void testTranscribe() throws Exception {
+		File outputFile = new File("test/TextProcessorTestAudio.wav");
 		TextProcessor tp = new TextProcessor();
-		File outputFile = new File("TextProcessorTestAudio.mp3");
-		tp.transcribe(outputFile);
+		Transcript out = tp.transcribe(outputFile);
+		System.out.println("Expected Output: Transcript: Optional[Hello. This is a Junit test case for speech to Braille.]");
 	}
 	
 

@@ -27,7 +27,7 @@ public final class TextProcessor {
                 .build();
         //set params
         var params = TranscriptOptionalParams.builder()
-                .speakerLabels(true)
+                .speakerLabels(false)
                 .build();
         //get audio file
         if (!audioFile.exists()) {
@@ -39,7 +39,6 @@ public final class TextProcessor {
         if (transcript.getStatus() == TranscriptStatus.ERROR) {
             throw new Exception("Transcript failed with error: " + transcript.getError().get());
         }
-
         System.out.println("Transcript: " + transcript.getText());
         return(transcript);
 	}
