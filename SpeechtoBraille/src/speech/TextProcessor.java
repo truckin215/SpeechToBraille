@@ -1,6 +1,7 @@
 package speech;
 
 import java.io.File;
+import java.util.Optional;
 
 // Make sure to add com.assemblyai:assemblyai-java to your dependencies
 
@@ -41,6 +42,19 @@ public final class TextProcessor {
         }
         System.out.println("Transcript: " + transcript.getText());
         return(transcript);
+	}
+	//Convert Transcript To braille
+	public void toBraille(Transcript transcript){
+		//error handling
+	    if (transcript == null || transcript.getText() == null) {
+	        System.err.println("Transcript broke.");
+	        return;
+	    }
+	    //save transcript
+	    String script = transcript.getText().get();
+	    for (int i=0; i<script.length();i++){
+	    	
+	    }
 	}
 }
 

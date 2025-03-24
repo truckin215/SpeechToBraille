@@ -12,7 +12,7 @@ public final class Controller {
     	tp.record();
     	//running trancriber
     	System.out.println("running transcriber.");
-    	tp.transcribe();
+    	tp.toBraille(tp.transcribe());
     	System.out.println("program stopped.");
     }
 }

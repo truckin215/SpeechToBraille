@@ -28,6 +28,11 @@
         <version>1.9.3</version>
         <scope>test</scope>
     </dependency>
+    <dependency>
+  	  <groupId>com.pi4j</groupId>
+  	  <artifactId>pi4j-core</artifactId>
+  	  <version>2.3.0</version>
+	</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
