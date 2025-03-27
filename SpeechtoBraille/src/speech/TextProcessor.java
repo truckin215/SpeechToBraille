@@ -2,7 +2,6 @@ package speech;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,16 +59,6 @@ public final class TextProcessor {
 	    //runs through each character
 	    for (int i=0; i<script.length;i++){
 	    	brailleList.add(new BrailleChar(script[i]));
-	    }
-	    printList(brailleList);
-	}
-	public void printList(List<BrailleChar> brailleList) {
-	    for (int i=0; i<brailleList.size();i++){
-	    	int[][] value = brailleList.get(i).getValue();
-	    	for(int y=0; y<value.length;y++) {
-	    			System.out.println(Arrays.toString(value[y]));
-	    	}
-	    	System.out.println(" ");
 	    }
 	}
 }
