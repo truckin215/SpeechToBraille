@@ -1,6 +1,8 @@
 package speech;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 // Make sure to add com.assemblyai:assemblyai-java to your dependencies
@@ -51,9 +53,12 @@ public final class TextProcessor {
 	        return;
 	    }
 	    //save transcript
-	    String script = transcript.getText().get();
-	    for (int i=0; i<script.length();i++){
-	    	
+	    char[] script = transcript.getText().get().toLowerCase().toCharArray();
+	    //array of BrailleChar Objects
+	    List<BrailleChar> brailleList = new ArrayList<>();
+	    //runs through each character
+	    for (int i=0; i<script.length;i++){
+	    	brailleList.add(new BrailleChar(script[i]));
 	    }
 	}
 }
