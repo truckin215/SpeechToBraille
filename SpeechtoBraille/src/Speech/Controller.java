@@ -1,6 +1,8 @@
 // Make sure to add com.assemblyai:assemblyai-java to your dependencies
 
 package speech;
+import java.util.List;
+
 import com.assemblyai.api.AssemblyAI;
 import com.assemblyai.api.resources.transcripts.types.*;
 
@@ -12,7 +14,11 @@ public final class Controller {
     	tp.record();
     	//running trancriber
     	System.out.println("running transcriber.");
-    	tp.toBraille(tp.transcribe());
+    	List<BrailleChar> brailleList = tp.toBraille(tp.transcribe());
+    	//input gathered
+    	ActuatorController out = new ActuatorController(brailleList);
+    	out.output();
+    	
     	System.out.println("program stopped.");
     }
 }

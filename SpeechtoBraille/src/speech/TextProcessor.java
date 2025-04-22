@@ -47,11 +47,11 @@ public final class TextProcessor {
         return(transcript);
 	}
 	//Convert Transcript To braille
-	public void toBraille(Transcript transcript){
+	public List<BrailleChar> toBraille(Transcript transcript){
 		//error handling
 	    if (transcript == null || transcript.getText() == null) {
 	        System.err.println("Transcript broke.");
-	        return;
+	        return null;
 	    }
 	    //save transcript
 	    char[] script = transcript.getText().get().toLowerCase().toCharArray();
@@ -62,6 +62,7 @@ public final class TextProcessor {
 	    	brailleList.add(new BrailleChar(script[i]));
 	    }
 	    printList(brailleList);
+	    return(brailleList);
 	}
 	public void printList(List<BrailleChar> brailleList) {
 	    for (int i=0; i<brailleList.size();i++){
