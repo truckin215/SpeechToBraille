@@ -1,11 +1,7 @@
 package speech;
 import java.util.Arrays;
 import java.util.List;
-
-//import for Pi GPIO controller
-import com.pi4j.Pi4J;
-import com.pi4j.context.Context;
-import com.pi4j.io.gpio.digital.*;
+import java.util.concurrent.TimeUnit;
 
 public class ActuatorController {
 	List<BrailleChar> brailleList;
@@ -23,10 +19,17 @@ public class ActuatorController {
 			    for (int col = 0; col < 2; col++) {
 			    	if (value[row][col]==1) {
 	                    int index = col * 3 + row;
-	                    out.SendSignal(index); 
+	                    out.signalOut(index);
 			    	}
 			    }
 			}
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			//resets pins
+			out.resetAll();
 		}
 	}
 }

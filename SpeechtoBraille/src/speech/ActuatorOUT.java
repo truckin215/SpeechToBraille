@@ -1,26 +1,53 @@
 package speech;
 
-import com.pi4j.Pi4J;
-import com.pi4j.context.Context;
-import com.pi4j.io.gpio.digital.DigitalOutput;
-import com.pi4j.io.gpio.digital.DigitalOutputConfig;
-import com.pi4j.io.gpio.digital.DigitalState;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
+
+//This will communicate with a flask server on the PI
 public class ActuatorOUT {
-	public void SendSignal(int index) {
-		Context pi4j = Pi4J.newAutoContext();
+	
+	private static final String PI_HOST = "http://ConnorBerrypi.local:5000";
+	
+	//will send individual signals on the server to raise a pin
+	@SuppressWarnings("deprecation")
+	public void signalOut(int pin){
+	    try {
+	        String endpoint = "/fire/" + pin;
+	        URL url = new URL(PI_HOST + endpoint);
+	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+	        con.setRequestMethod("GET");
 
-		// Step 1: Build the config
-		DigitalOutputConfig outputConfig = DigitalOutput.newConfigBuilder(pi4j)            
-		    .id("led")
-		    .name("LED Blinker")
-		    .address(17) // BCM 17 = pin 11 on header
-		    .shutdown(DigitalState.LOW)
-		    .initial(DigitalState.LOW)
-		    .provider("pigpio-digital-output")
-		    .build();
+	        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	        String inputLine;
+	        StringBuilder content = new StringBuilder();
 
-		// Step 2: Create the DigitalOutput from the config
-		DigitalOutput led = pi4j.create(outputConfig);
+	        while ((inputLine = in.readLine()) != null)
+	            content.append(inputLine);
+
+	        in.close();
+	        con.disconnect();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println("failed to send");
+	    }
+	}
+
+//will lower all pins
+	@SuppressWarnings("deprecation")
+	public void resetAll() {
+	    try {
+	        URL url = new URL(PI_HOST + "/reset");
+	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+	        con.setRequestMethod("GET");
+	        con.getInputStream().close();
+	        con.disconnect();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println("failed to reset");
+	    }
 	}
 }
