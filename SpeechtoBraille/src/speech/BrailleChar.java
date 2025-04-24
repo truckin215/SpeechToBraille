@@ -1,10 +1,11 @@
 package speech;
 
 public class BrailleChar {
-	int [][] value;
-	BrailleChar(char c){
+	int[][] value;
+
+	BrailleChar(char c) {
 		Alphabet alphabet = new Alphabet();
-		switch(c) {
+		switch (c) {
 			case 'a':
 				this.value = alphabet.Abraille();
 				break;
@@ -96,11 +97,24 @@ public class BrailleChar {
 				this.value = alphabet.Spacebraille();
 				break;
 		}
-		
+
 	}
-	
+
 	//todo get value function
-	public int [][] getValue(){
+	public int[][] getValue() {
 		return value;
+	}
+
+	public String toUnicode() {
+		int code = 0x2800;
+
+		if (value[0][0] == 1) code += 0x01;
+		if (value[1][0] == 1) code += 0x02;
+		if (value[2][0] == 1) code += 0x04;
+		if (value[0][1] == 1) code += 0x08;
+		if (value[1][1] == 1) code += 0x10;
+		if (value[2][1] == 1) code += 0x20;
+
+		return Character.toString((char) code);
 	}
 }
