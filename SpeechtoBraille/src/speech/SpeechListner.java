@@ -94,7 +94,9 @@ public class SpeechListner {
         //can change were it outputs here
         File outputDir = new File("output");
         File outputFile = new File(outputDir,"recorded_audio.wav");
-
+        if (!outputDir.exists()) {
+            outputDir.mkdirs(); // creates the directory and any missing parent dirs
+        }
         try {
             AudioSystem.write(audioInputStream, AudioFileFormat.Type.WAVE, outputFile);
             System.out.println("Recording saved as " + outputFile.getAbsolutePath());

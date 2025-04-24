@@ -18,6 +18,7 @@ public class ActuatorController {
 			for (int row = 0; row < 3; row++) {
 			    for (int col = 0; col < 2; col++) {
 			    	if (value[row][col]==1) {
+			    		//17 is a offset to use right pins on the pi
 	                    int index = col * 3 + row;
 	                    out.signalOut(index);
 			    	}

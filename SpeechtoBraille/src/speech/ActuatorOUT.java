@@ -5,18 +5,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
 //This will communicate with a flask server on the PI
 public class ActuatorOUT {
 	
 	private static final String PI_HOST = "http://ConnorBerrypi.local:5000";
 	
 	//will send individual signals on the server to raise a pin
-	@SuppressWarnings("deprecation")
 	public void signalOut(int pin){
 	    try {
 	        String endpoint = "/fire/" + pin;
-	        URL url = new URL(PI_HOST + endpoint);
+	        @SuppressWarnings("deprecation")
+			URL url = new URL(PI_HOST + endpoint);
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 	        con.setRequestMethod("GET");
 
@@ -37,10 +36,10 @@ public class ActuatorOUT {
 	}
 
 //will lower all pins
-	@SuppressWarnings("deprecation")
 	public void resetAll() {
 	    try {
-	        URL url = new URL(PI_HOST + "/reset");
+	        @SuppressWarnings("deprecation")
+			URL url = new URL(PI_HOST + "/reset");
 	        HttpURLConnection con = (HttpURLConnection) url.openConnection();
 	        con.setRequestMethod("GET");
 	        con.getInputStream().close();
