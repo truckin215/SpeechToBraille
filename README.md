@@ -4,6 +4,7 @@ the project files include javaFX in the libs, and just requries the VM option:
 --module-path "C:\Users\conno\Documents\School\Software\SpeechToBraille\SpeechtoBraille\libs\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml 
 replacing the location with the location on your pc.
 All other dependencies are maven dependencies and should be downloaded from pom. if not please install:
+###
     		<groupId>com.assemblyai</groupId>
     		<artifactId>assemblyai-java</artifactId>
     		<version>4.0.1</version>
