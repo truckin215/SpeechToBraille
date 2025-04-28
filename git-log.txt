@@ -1,3 +1,45 @@
+commit 11b84c3051016f7d814caf4e4a69a710e7eb6fe7
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Thu Apr 24 01:59:02 2025 -0400
+
+    Ui complete
+
+commit 4fd135e19b70ede2bb61b7f6674d70680962151d
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Wed Apr 23 21:57:20 2025 -0400
+
+    basic GUI controller and javafx added
+
+commit fdcdb494be86ad22f3c2d0d864bd780ffb7ef3ce
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Wed Apr 23 21:04:37 2025 -0400
+
+    Finished  Actuators
+
+commit 34662044e37cdbc2b602e4209da67ffb25094936
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Tue Apr 22 20:15:54 2025 -0400
+
+    created flask readme
+
+commit 9e15de7302a3ba0eef3477a49a6b017fc7a4d8b3
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Tue Apr 22 20:14:35 2025 -0400
+
+    actuator out ready
+
+commit 01717ababd270ffa308cf3f40b8c92b1cd6f89b8
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Tue Apr 22 19:36:58 2025 -0400
+
+    Acutrator Controller Complete
+
+commit 57dbefea8aaf2a08fee167da412a627cc2de1b7e
+Author: Connor Murray <connormurray215@gmail.com>
+Date:   Fri Mar 28 15:51:24 2025 -0400
+
+    penalty done
+
 commit 26cda87f11c4fb1ae442b3c954c71f766d9f4b33
 Author: MauJG <161003288+MauJG@users.noreply.github.com>
 Date:   Thu Mar 27 13:47:58 2025 -0400
