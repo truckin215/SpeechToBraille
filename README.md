@@ -1,4 +1,4 @@
-Demo:  
+Demo(Click Thumbnail To View):   
 	[![Watch the demo](https://img.youtube.com/vi/suyXls2QUo0/0.jpg)](https://www.youtube.com/watch?v=suyXls2QUo0)
 
 
