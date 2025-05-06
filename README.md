@@ -1,5 +1,6 @@
 Demo:
-	https://www.youtube.com/watch?v=suyXls2QUo0
+	[![Watch the demo](https://img.youtube.com/vi/suyXls2QUo0/0.jpg)](https://www.youtube.com/watch?v=suyXls2QUo0)
+
 
 1. External Depdendencies:
 Requires instlation and linking of javaFX. Can be done using eclipse plugin i believe.
