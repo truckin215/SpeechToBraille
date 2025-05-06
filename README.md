@@ -1,3 +1,6 @@
+Demo:
+	https://www.youtube.com/watch?v=suyXls2QUo0
+
 1. External Depdendencies:
 Requires instlation and linking of javaFX. Can be done using eclipse plugin i believe.
 the project files include javaFX in the libs, and just requries the VM option:
